@@ -39,11 +39,20 @@ sub_a:
 	lw $t0, 12($sp)
 
 
-Loopa:
+loopa:
 	lb $t1, ($t0)
 	beq $t1, 10, exit_first 
 	beq $t1, 0, exit_first 
-	bet $t1, 44, exit_function
+	beq $t1, 44, exit_function
+	beq $t1, 9, tab
+	beq $t1, 32, tab
+
+
+	#add intermediate 
+	addi $t0, $t0, 1
+	addi $t2, $t2, 1 
+	j loopa
+	
 
 
 
