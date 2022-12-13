@@ -79,6 +79,13 @@ exit_a:
 	move $s3, $t0 #last legal input 
 	lw $s2, 4($sp) 
 	add $s2, $s2, $t3 
+	sw $s2, 4($sp)
+
+	jal sub_b 
+	beq $s6, 1, slash
+
+	move #a0, $t6
+	syscall 
 	
 
 
