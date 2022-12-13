@@ -85,7 +85,7 @@ exit_a:
 	jal sub_b 
 	beq $s6, 1, slash
 
-	move #a0, $t6
+	move $a0, $t6
 	syscall 
 
 
@@ -97,11 +97,11 @@ exit_a:
 	#prints an integer 
 	#load word into register a0 which is the first register in the stack pointer 
 
-#load integer that is stored to print out and get sys call 
+#load integer that is stored to print out and get syscall 
 
 	li $v0, 1
-	li $a0, 0($sp) 
-	sys call 
+	lw $a0, 0($sp) 
+	syscall 
 
 	beq $s8, 1, n_ending #ends and load function 
 	j comma_ending 
