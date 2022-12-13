@@ -28,6 +28,17 @@ sw $t0, 12($sp)#for suprogram a
 sw $t0, 4($sp) # for supprogram b
 
 
+#unconditional jump to sub-program a
+
+jal sub_a
+
+
+
+sub_a:
+	sw $ra, 8($sp)
+	lw $t0, 12($sp)
+
+
 
 addsLoop:
 	sub $t2, $t2, $t2 
