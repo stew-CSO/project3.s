@@ -109,7 +109,11 @@ end_enter:
 	addi $s8, zero, 1
 
 end_comma:
-	 
+	beq $s2, $t0, next 
+	addi $t0, $t0, -1
+	lb $t1, ($t0)
+	bgt $t1, 47, num
+	bgt $t1, 96, lowerCaseChar
 
 
 exitfunction: 
