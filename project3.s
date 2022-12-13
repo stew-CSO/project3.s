@@ -39,6 +39,13 @@ sub_a:
 	lw $t0, 12($sp)
 
 
+Loopa:
+	lb $t1, ($t0)
+	beq $t1, 10, exit_first 
+	beq $t1, 0, exit_first 
+	bet $t1, 44, exit_function
+
+
 
 addsLoop:
 	sub $t2, $t2, $t2 
