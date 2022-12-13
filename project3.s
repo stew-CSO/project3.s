@@ -126,8 +126,16 @@ comma_ending:
 	sw $s3, 4($sp) #store contents of register $sp into stack, new starting point for register 
 	addi $t0, $t0, 1 
 	add $t2, $zero, $zero 
-	addi $t3, $zero, 1 #will ignore the comma  
- 
+	addi $t3, $zero, 1 #will ignore the comma 
+
+	#restarting variables used so they can go back to where they should be
+	 
+	add $t4, $zero, $zero 
+	add $t5, $zero, $zero 
+	add $t6, $zero, $zero 
+	add $t7, $zero, $zero 
+	
+
 
 
 sub_b:
