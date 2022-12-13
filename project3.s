@@ -131,6 +131,12 @@ lowerCaseChar:
 	sub $t1, $t7, 87
 	j base28
 
+
+num:
+	bgt $t0, 57, outOfBounds  
+	sub $t7, $t7, 48
+	j base28 
+
 exitfunction: 
 	
 
