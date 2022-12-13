@@ -106,6 +106,12 @@ exit_a:
 	j comma_ending 
 
 
+slash:
+
+	la $a0, 0($sp)
+	sys call 
+	beq $s8, 1, n_ending
+
 sub_b:
 	lw $t0, 4($sp) 
 
