@@ -52,8 +52,17 @@ loopa:
 	addi $t0, $t0, 1
 	addi $t2, $t2, 1 
 	j loopa
-	
 
+#separate spaces and tabs in program 
+
+#separateSP:
+	
+	
+tab:
+	bge $t2, 1, separateSP
+	addi $t3, $t3, 1
+	addi $t0, $t0, 1 
+	j loopa
 
 
 addsLoop:
