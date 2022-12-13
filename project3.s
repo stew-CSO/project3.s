@@ -20,6 +20,15 @@ li $a1, 1001
 syscall 
 
 
+addi $s1, $zero, 32
+
+
+addi $sp, $sp, -16 
+sw $t0, 12($sp)#for suprogram a 
+sw $t0, 4($sp) # for supprogram b
+
+
+
 addsLoop:
 	sub $t2, $t2, $t2 
 	add $t9, $t7, $t9
@@ -30,6 +39,6 @@ addsLoop:
 
 
 exitfunction: 
-	li $v0
+	
 
 
