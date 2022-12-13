@@ -20,7 +20,7 @@ li $a1, 1001
 syscall 
 
 
-addi $s1, $zero, 32
+addi $s1, $zero, 28
 
 
 addi $sp, $sp, -16 
@@ -110,7 +110,7 @@ exit_a:
 slash:
 
 	la $a0, 0($sp)
-	sys call 
+	syscall 
 	beq $s8, 1, n_ending
 
 
@@ -120,7 +120,7 @@ comma_ending:
 
 	li $v0, 11
 	la $a0, 44 
-	sys call 
+	syscall 
 
 #send what's in $s3 to $t0, S43 was the last address in the loop 
 	move $t0, $s3
@@ -152,14 +152,14 @@ loopb:
 	lb $t1, ($t0)
 	beq $t1, 44, end_comma
 	beq $t1, 10, end_enter 
-	beq #t1, 0, end_enter  
+	beq $t1, 0, end_enter  
 	addi $t0, $t0, 1 
 
 
 #uses a counter that tells the program that the loop can end here if there is an enter 
 
 end_enter:
-	addi $s8, zero, 1
+	addi $s8, $zero, 1
 
 end_comma:
 	beq $s2, $t0, lastStep 
@@ -191,7 +191,7 @@ num:
 	j base28 
 
 base28:
-	beq $t5, $t, addsLoop
+	beq $t5, $t6, addsLoop
 	multu $t1, $s1
 	mflo $t1
 	add $t1, $t7, $t5
@@ -199,7 +199,7 @@ base28:
 	bne $t5, $t6, base28
 
 addsLoop:
-	sub $t5, $t5, $t25 
+	sub $t5, $t5, $t5 
 	add $t8, $t1, $t8
 	addi $t6, 1 
 	bgt $t6, 4, bug 
