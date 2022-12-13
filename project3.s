@@ -142,7 +142,11 @@ base28:
 	multu $t7, $s5
 	mflo $t4
 	mfhi $t5
-	
+	add $t7, $t4, $t5
+	addi $t2, 1
+	bne $t2, $t3, base28
+
+
 exitfunction: 
 	
 
