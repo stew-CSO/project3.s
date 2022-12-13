@@ -24,20 +24,21 @@ addi $s1, $zero, 32
 
 
 addi $sp, $sp, -16 
-sw $t0, 12($sp)#for suprogram a 
-sw $t0, 4($sp) # for supprogram b
+sw $t0, 12($sp)#for subprogram a 
+sw $t0, 4($sp) # for subprogram b
 
 
 #unconditional jump to sub-program a
 
 jal sub_a
-
+li $v0, 10
+syscall
 
 
 sub_a:
 	sw $ra, 8($sp)
 	lw $t0, 12($sp)
-
+	
 
 loopa:
 	lb $t1, ($t0)
@@ -216,9 +217,6 @@ lastStep:
 
 	
 
-
-
-exitfunction: 
 	
 
 
