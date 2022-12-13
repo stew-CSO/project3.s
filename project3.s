@@ -142,7 +142,7 @@ addsLoop:
 	sub $t5, $t5, $t25 
 	add $t8, $t1, $t8
 	addi $t6, 1 
-	bgt $t6, $a4, bug 
+	bgt $t6, 4, bug 
 	j end_comma 
 
 
