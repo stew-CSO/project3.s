@@ -75,6 +75,13 @@ tab:
 	j loopa
 
 
+exit_a:
+	move $s3, $t0 #last legal input 
+	lw $s2, 4($sp) 
+	add $s2, $s2, $t3 
+	
+
+
 addsLoop:
 	sub $t2, $t2, $t2 
 	add $t9, $t7, $t9
