@@ -134,7 +134,8 @@ comma_ending:
 	add $t5, $zero, $zero 
 	add $t6, $zero, $zero 
 	add $t7, $zero, $zero 
-	
+	add $t8, $zero, $zero 
+	add $s6, $zero, $zero 
 
 
 
