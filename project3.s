@@ -125,6 +125,12 @@ bug:
 	sw $t4, 0($sp) 
 	jr $ra 
 
+
+lowerCaseChar:
+	bgt $t1, 114, outOfBounds
+	sub $t1, $t7, 87
+	j base28
+
 exitfunction: 
 	
 
