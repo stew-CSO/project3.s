@@ -82,13 +82,6 @@ exit_a:
 	
 
 
-addsLoop:
-	sub $t2, $t2, $t2 
-	add $t9, $t7, $t9
-	addi $t3, 1 
-	bgt $t3, $s4, unrecognize 
-	beq $s0, $t1, exitfunction 
-	jr $ra 
 
 
 sub_b:
@@ -133,18 +126,24 @@ lowerCaseChar:
 
 
 num:
-	bgt $t0, 57, outOfBounds  
-	sub $t7, $t7, 48
+	bgt $t1, 57, outOfBounds  
+	sub $t1, $t1, 48
 	j base28 
 
 base28:
-	beq $t2, $t3, addsLoop
-	multu $t7, $s5
-	mflo $t4
-	mfhi $t5
-	add $t7, $t4, $t5
-	addi $t2, 1
-	bne $t2, $t3, base28
+	beq $t5, $t, addsLoop
+	multu $t1, $s1
+	mflo $t1
+	add $t1, $t7, $t5
+	addi $t5, 1
+	bne $t5, $t6, base28
+
+addsLoop:
+	sub $t5, $t5, $t25 
+	add $t8, $t1, $t8
+	addi $t6, 1 
+	bgt $t6, $a4, bug 
+	
 
 
 exitfunction: 
