@@ -4,7 +4,7 @@
 
 
 .data
-input: .space 11 
+input: .space 1001 
  
 
 .text
@@ -21,7 +21,7 @@ syscall
 
 
 addi $s1, $zero, 28
-
+move $t0, $a0
 
 addi $sp, $sp, -16 
 sw $t0, 12($sp)#for subprogram a 
@@ -44,7 +44,7 @@ loopa:
 	lb $t1, ($t0)
 	beq $t1, 10, exit_a 
 	beq $t1, 0, exit_a 
-	beq $t1, 44, exit_function
+	beq $t1, 44, exit_a
 	beq $t1, 9, tab
 	beq $t1, 32, tab
 
@@ -180,13 +180,14 @@ bug:
 
 
 lowerCaseChar:
-	bgt $t1, 114, outOfBounds
+	bgt $t1, 114, bug
 	sub $t1, $t7, 87
 	j base28
 
 
+
 num:
-	bgt $t1, 57, outOfBounds  
+	bgt $t1, 57, bug  
 	sub $t1, $t1, 48
 	j base28 
 
