@@ -93,7 +93,17 @@ exit_a:
 	syscall 
 	
 
+	#prints an integer 
+	#load word into register a0 which is the first register in the stack pointer 
 
+#load integer that is stored to print out and get sys call 
+
+	li $v0, 1
+	li $a0, 0($sp) 
+	sys call 
+
+	beq $s8, 1, n_ending #ends and load function 
+	j comma_ending 
 
 
 sub_b:
