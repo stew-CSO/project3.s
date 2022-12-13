@@ -121,7 +121,13 @@ comma_ending:
 	la $a0, 44 
 	sys call 
 
-
+#send what's in $s3 to $t0, S43 was the last address in the loop 
+	move $t0, $s3
+	sw $s3, 4($sp) #store contents of register $sp into stack, new starting point for register 
+	addi $t0, $t0, 1 
+	add $t2, $zero, $zero 
+	addi $t3, $zero, 1 #will ignore the comma  
+ 
 
 
 sub_b:
