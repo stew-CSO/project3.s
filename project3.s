@@ -119,7 +119,11 @@ end_comma:
 	j bug 
 
 bug:  
-
+	addi $s6, $zero, 1
+	li $v0, 4 #prints character
+	addi $t4, $zero, 63 
+	sw $t4, 0($sp) 
+	jr $ra 
 
 exitfunction: 
 	
