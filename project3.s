@@ -164,10 +164,10 @@ end_enter:
 end_comma:
 	beq $s2, $t0, lastStep 
 	addi $t0, $t0, -1
-	lb $t1, ($t0)
-	bgt $t1, 47, num
+	lb $t1, ($t0)	
 	bgt $t1, 96, lowerCaseChar
 	bgt $t1, 64, upperCaseChar 
+	bgt $t1, 47, num
 	beq $s2, $t0, lastStep 
 	j bug 
 
