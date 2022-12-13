@@ -112,6 +112,18 @@ slash:
 	sys call 
 	beq $s8, 1, n_ending
 
+
+comma_ending: 
+
+#prints out a comma because we're going to the next input 
+
+	li $v0, 11
+	la $a0, 44 
+	sys call 
+
+
+
+
 sub_b:
 	lw $t0, 4($sp) 
 
