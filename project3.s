@@ -137,6 +137,12 @@ num:
 	sub $t7, $t7, 48
 	j base28 
 
+base28:
+	beq $t2, $t3, addsLoop
+	multu $t7, $s5
+	mflo $t4
+	mfhi $t5
+	
 exitfunction: 
 	
 
