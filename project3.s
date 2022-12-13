@@ -86,6 +86,11 @@ exit_a:
 
 	move #a0, $t6
 	syscall 
+
+
+	li $v0, 11
+	la $a0, 47 
+	syscall 
 	
 
 
