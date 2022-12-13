@@ -97,7 +97,7 @@ exit_a:
 	#prints an integer 
 	#load word into register a0 which is the first register in the stack pointer 
 
-#load integer that is stored to print out and get syscall 
+	#load integer that is stored to print out and get syscall 
 
 	li $v0, 1
 	lw $a0, 0($sp) 
@@ -137,6 +137,8 @@ comma_ending:
 	add $t7, $zero, $zero 
 	add $t8, $zero, $zero 
 	add $s6, $zero, $zero 
+
+ 	j loopa
 
 n_ending:
 	lw $ra, 8($sp)#third register in stack that stored the last $ra
