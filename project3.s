@@ -62,6 +62,9 @@ separateSP:
 	beq $t1, 44, exit_function 
 	addi $t0, $t0, 1
 
+	beq $t1, 9, separateSP
+	beq $t1, 32, separateSP
+	j loopa
 	
 	
 	
