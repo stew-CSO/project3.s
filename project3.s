@@ -153,7 +153,8 @@ lastStep:
 	li $v0, 1
 	add $t4, $t8, $zero #what variable holds the result 
 	sw $t4, 0($sp) #store word in register $t4 into 0
-	
+	jr $ra #jump back to the last unconditional jump 
+
 	
 
 
