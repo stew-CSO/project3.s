@@ -91,6 +91,16 @@ addsLoop:
 	jr $ra 
 
 
+sub_b:
+	lw $t0, 4($sp) 
+
+
+loopb:
+	lb $t1, ($t0)
+	beq $t1, 44, end_comma
+	
+
+
 exitfunction: 
 	
 
