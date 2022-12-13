@@ -137,6 +137,10 @@ comma_ending:
 	add $t8, $zero, $zero 
 	add $s6, $zero, $zero 
 
+n_ending:
+	lw $ra, 8($sp)#third register in stack that stored the last $ra
+	jr $ra #jumps to the beginning 
+
 
 
 sub_b:
