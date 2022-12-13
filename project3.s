@@ -143,7 +143,8 @@ addsLoop:
 	add $t8, $t1, $t8
 	addi $t6, 1 
 	bgt $t6, $a4, bug 
-	
+	bne $s8, $zero, end_enter 
+	j end_comma 
 
 
 exitfunction: 
