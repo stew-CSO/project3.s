@@ -98,7 +98,18 @@ sub_b:
 loopb:
 	lb $t1, ($t0)
 	beq $t1, 44, end_comma
-	
+	beq $t1, 10, end_enter 
+	beq #t1, 0, end_enter  
+	addi $t0, $t0, 1 
+
+
+#uses a counter that tells the program that the loop can end here if there is an enter 
+
+end_enter:
+	addi $s8, zero, 1
+
+end_comma:
+	 
 
 
 exitfunction: 
