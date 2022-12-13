@@ -181,7 +181,12 @@ bug:
 
 lowerCaseChar:
 	bgt $t1, 114, bug
-	sub $t1, $t7, 87
+	sub $t1, $t1, 87
+	j base28
+
+upperCaseChar: 
+	bgt $t1, 82, bug
+	sub $t1, $t1, 55
 	j base28
 
 
@@ -194,8 +199,8 @@ num:
 base28:
 	beq $t5, $t6, addsLoop
 	multu $t1, $s1
-	mflo $t1
-	add $t1, $t7, $t5
+	mflo $t7
+	add $t1, $t7, $0
 	addi $t5, 1
 	bne $t5, $t6, base28
 
