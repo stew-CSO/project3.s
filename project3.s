@@ -55,7 +55,14 @@ loopa:
 
 #separate spaces and tabs in program 
 
-#separateSP:
+separateSP:
+	lb $t1, ($t0)
+	beq $t1, 10, exit_function 
+	bet $t1, 0, exit_function 
+	beq $t1, 44, exit_function 
+	addi $t0, $t0, 1
+
+	
 	
 	
 tab:
