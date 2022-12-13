@@ -143,8 +143,19 @@ addsLoop:
 	add $t8, $t1, $t8
 	addi $t6, 1 
 	bgt $t6, $a4, bug 
-	bne $s8, $zero, end_enter 
 	j end_comma 
+
+
+lastStep:
+	#if $t6 is 0 then we go to bug 
+
+	beq $t6, 0, bug 
+	li $v0, 1
+	add $t4, $t8, $zero #what variable holds the result 
+	sw $t4, 0($sp) #store word in register $t4 into 0
+	
+	
+
 
 
 exitfunction: 
